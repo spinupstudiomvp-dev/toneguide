@@ -48,6 +48,45 @@ function Navbar() {
   );
 }
 
+function AuditCTA() {
+  const [url, setUrl] = useState("");
+  return (
+    <section className="py-16 md:py-24 bg-coral/5 border-y border-coral/10">
+      <div className="max-w-3xl mx-auto px-6 text-center">
+        <Badge variant="secondary" className="mb-4 rounded-full px-4 py-1.5 text-xs font-medium bg-coral-light text-coral-dark border-0">
+          <Sparkles className="w-3 h-3 mr-1.5" />
+          Free tool — no signup required
+        </Badge>
+        <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          Audit Your <span className="text-coral">Brand Voice</span>
+        </h2>
+        <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+          Enter your website URL and we&apos;ll reverse-engineer your tone of voice in under 60 seconds. Completely free.
+        </p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (url.trim()) window.location.href = `/audit?url=${encodeURIComponent(url.trim())}`;
+          }}
+          className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+        >
+          <Input
+            type="text"
+            placeholder="yourcompany.com"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            className="h-12 rounded-full px-5 bg-white border-border/50 flex-1"
+          />
+          <Button type="submit" className="bg-coral hover:bg-coral-dark text-white rounded-full h-12 px-8 shrink-0">
+            Audit My Voice
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
 function HeroSection() {
   return (
     <section className="pt-32 pb-20 md:pt-40 md:pb-32">
@@ -400,6 +439,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <AuditCTA />
       <FeaturesSection />
       <HowItWorksSection />
       <SocialProofSection />

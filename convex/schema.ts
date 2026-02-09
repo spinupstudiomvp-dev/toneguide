@@ -66,6 +66,17 @@ export default defineSchema({
     createdAt: v.number(),
   }).index("by_session", ["sessionId"]),
 
+  toneAudits: defineTable({
+    url: v.string(),
+    brandName: v.string(),
+    channels: v.string(),
+    voiceProfile: v.string(),
+    analysis: v.string(),
+    score: v.number(),
+    email: v.optional(v.string()),
+    createdAt: v.number(),
+  }).index("by_url", ["url"]).index("by_createdAt", ["createdAt"]),
+
   waitlist: defineTable({
     email: v.string(),
     createdAt: v.number(),
