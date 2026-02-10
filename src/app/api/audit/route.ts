@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { ConvexHttpClient } from "convex/browser";
+import { api } from "../../../../convex/_generated/api";
 import { crawlWebsite } from "@/lib/crawl";
 import { analyzeTone, AuditData } from "@/lib/tone-analysis";
+
+const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export const maxDuration = 60;
 
@@ -33,8 +37,20 @@ export async function POST(req: NextRequest) {
       createdAt: Date.now(),
     };
 
-    // TODO: Store in Convex when deployed
-    // For now, return data directly — client stores in localStorage
+    // Store in Convex
+    try {
+      await convex.mutation(api.toneAudits.create, {
+        url: crawlResult.url,
+        brandName: crawlResult.brandName,
+        channels: JSON.stringify(crawlResult.socialLinks || {}),
+        voiceProfile: JSON.stringify(analysis.voiceProfile || {}),
+        analysis: JSON.stringify(analysis),
+        score: analysis.overallScore ?? 0,
+        email: email || undefined,
+      });
+    } catch (e) {
+      console.error("Failed to store audit in Convex:", e);
+    }
 
     return NextResponse.json(auditData);
   } catch (error) {

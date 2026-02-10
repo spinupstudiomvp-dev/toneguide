@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useMutation } from "convex/react";
+import { api } from "../../convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -33,6 +35,7 @@ function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#features" className="hover:text-foreground transition-colors">Features</a>
           <a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a>
+          <a href="/blog" className="hover:text-foreground transition-colors">Blog</a>
           <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
         </div>
         <div className="flex items-center gap-3">
@@ -363,11 +366,22 @@ function SocialProofSection() {
 function WaitlistSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const joinWaitlist = useMutation(api.waitlist.join);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+    setLoading(true);
+    setError("");
+    try {
+      await joinWaitlist({ email });
       setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -397,12 +411,16 @@ function WaitlistSection() {
             />
             <Button
               type="submit"
+              disabled={loading}
               className="bg-coral hover:bg-coral-dark text-white rounded-full h-12 px-8 shrink-0"
             >
-              Join Waitlist
+              {loading ? "Joining…" : "Join Waitlist"}
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
           </form>
+        )}
+        {error && (
+          <p className="text-red-500 text-sm mt-3">{error}</p>
         )}
       </div>
     </section>
