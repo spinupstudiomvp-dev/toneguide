@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,41658,e=>{"use strict";var t=e.i(43476);e.i(50711);var i=e.i(82045);let n=new i.ConvexReactClient("https://little-echidna-115.eu-west-1.convex.cloud");function c({children:e}){return(0,t.jsx)(i.ConvexProvider,{client:n,children:e})}e.s(["default",()=>c])}]);

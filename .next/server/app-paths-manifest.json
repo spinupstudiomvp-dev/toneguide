@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/audit/route": "app/api/audit/route.js",
+  "/audit/[id]/page": "app/audit/[id]/page.js",
+  "/audit/page": "app/audit/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/blog/what-is-brand-voice/page": "app/blog/what-is-brand-voice/page.js",
+  "/brand/[id]/check/page": "app/brand/[id]/check/page.js",
+  "/brand/[id]/page": "app/brand/[id]/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/login/page": "app/login/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js"
+}

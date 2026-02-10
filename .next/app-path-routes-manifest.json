@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/audit/route": "/api/audit",
+  "/audit/[id]/page": "/audit/[id]",
+  "/audit/page": "/audit",
+  "/blog/page": "/blog",
+  "/blog/what-is-brand-voice/page": "/blog/what-is-brand-voice",
+  "/brand/[id]/check/page": "/brand/[id]/check",
+  "/brand/[id]/page": "/brand/[id]",
+  "/dashboard/page": "/dashboard",
+  "/favicon.ico/route": "/favicon.ico",
+  "/login/page": "/login",
+  "/onboarding/page": "/onboarding",
+  "/page": "/"
+}
