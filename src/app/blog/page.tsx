@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "tone-of-voice-examples",
+    title: "12 Tone of Voice Examples From Brands That Nail It",
+    excerpt: "See 12 real tone of voice examples from brands like Mailchimp, Apple, Slack, and Innocent. Learn what makes each voice work and how to build your own.",
+    date: "February 10, 2026",
+    readTime: "8 min read",
+  },
+  {
     slug: "brand-voice-consistency-tips",
     title: "7 Brand Voice Consistency Tips That Actually Work",
     excerpt: "Struggling with inconsistent brand messaging? These 7 actionable tips help marketing teams maintain a unified voice across every channel, writer, and campaign.",

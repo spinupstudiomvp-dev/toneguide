@@ -7,6 +7,7 @@ import {
   CheckCircle2, AlertCircle, Lightbulb, Users, BookOpen,
   TrendingUp, Globe, ExternalLink,
 } from "lucide-react";
+import AuditEmailCapture from "./AuditEmailCapture";
 
 interface Props {
   data: AuditData;
@@ -222,21 +223,15 @@ export default function AuditReport({ data }: Props) {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA with inline email capture */}
       <section className="text-center py-12 border-t border-border/50">
         <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3">
           Keep your team on this voice
         </h2>
         <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-          ToneGuide helps your marketing team stay on-brand with AI-powered content checks, a voice copilot, and real-time brand guidelines.
+          ToneGuide helps your marketing team stay on-brand with AI-powered content checks, a voice copilot, and real-time brand guidelines. Join the waitlist to get early access.
         </p>
-        <a
-          href="/#waitlist"
-          className="inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white rounded-full px-8 py-3 font-medium transition-colors"
-        >
-          Get Early Access
-          <ExternalLink className="w-4 h-4" />
-        </a>
+        <AuditEmailCapture brandName={data.brandName} auditUrl={data.url} />
       </section>
     </div>
   );

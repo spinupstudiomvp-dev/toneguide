@@ -2,7 +2,7 @@ import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 
 export const join = mutation({
-  args: { email: v.string() },
+  args: { email: v.string(), source: v.optional(v.string()) },
   handler: async (ctx, args) => {
     const existing = await ctx.db
       .query("waitlist")
@@ -11,6 +11,7 @@ export const join = mutation({
     if (existing) return existing._id;
     return await ctx.db.insert("waitlist", {
       email: args.email,
+      source: args.source,
       createdAt: Date.now(),
     });
   },

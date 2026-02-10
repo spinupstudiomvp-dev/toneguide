@@ -79,6 +79,7 @@ export default defineSchema({
 
   waitlist: defineTable({
     email: v.string(),
+    source: v.optional(v.string()),
     createdAt: v.number(),
   }).index("by_email", ["email"]),
 });
