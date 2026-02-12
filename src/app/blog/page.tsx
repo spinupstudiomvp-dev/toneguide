@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "brand-voice-social-media",
+    title: "How to Adapt Your Brand Voice for Social Media (Without Losing It)",
+    excerpt: "Learn how to adapt your brand voice across LinkedIn, Twitter/X, Instagram, and TikTok while staying consistent. Platform-specific tips with real examples.",
+    date: "February 12, 2026",
+    readTime: "8 min read",
+  },
+  {
     slug: "brand-voice-ai-tools",
     title: "Best AI Tools for Brand Voice Consistency (2026 Guide)",
     excerpt: "Compare the best AI tools that help marketing teams maintain brand voice consistency across all channels. From tone checkers to style guides — find the right fit.",
