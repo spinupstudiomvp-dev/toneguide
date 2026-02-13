@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "brand-voice-email-marketing",
+    title: "How to Keep Your Brand Voice Consistent in Email Marketing",
+    excerpt: "Your emails sound like they come from 5 different companies. Here's a practical framework for maintaining brand voice consistency across every email — from welcome sequences to re-engagement campaigns.",
+    date: "February 13, 2026",
+    readTime: "8 min read",
+  },
+  {
     slug: "train-writers-brand-voice",
     title: "How to Train New Writers on Your Brand Voice (Fast)",
     excerpt: "A practical playbook for onboarding freelancers, new hires, and agency writers on your brand voice — so every piece sounds like it came from your team.",
