@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "brand-voice-rebrand",
+    title: "How to Update Your Brand Voice During a Rebrand (Without Losing Trust)",
+    excerpt: "A step-by-step guide to evolving your brand voice during a rebrand — audit what you have, decide what shifts, roll out in phases, and keep audience trust intact.",
+    date: "February 14, 2026",
+    readTime: "9 min read",
+  },
+  {
     slug: "brand-voice-email-marketing",
     title: "How to Keep Your Brand Voice Consistent in Email Marketing",
     excerpt: "Your emails sound like they come from 5 different companies. Here's a practical framework for maintaining brand voice consistency across every email — from welcome sequences to re-engagement campaigns.",
